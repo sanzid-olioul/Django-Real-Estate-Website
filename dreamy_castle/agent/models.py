@@ -10,9 +10,9 @@ def user_directory_path(instance, filename):
     timestap = int(time.time()*1000)
     _,ext = filename.split('.')
     f_name = user_name + str(timestap)+'.'+ext
-    return f'user/{user_name}/{f_name}'
+    return f'agents/{user_name}/{f_name}'
 
-class Profile(models.Model):
+class AgentProfile(models.Model):
     user = models.OneToOneField(User,primary_key=True,on_delete = models.CASCADE)
     profile_photo = models.ImageField(upload_to=user_directory_path,default = 'logo/profile.png')
     about = models.TextField()
@@ -29,7 +29,7 @@ class Profile(models.Model):
 
     def save(self,*args, **kwargs):
         try:
-            prev = Profile.objects.get(id=self.id)
+            prev = AgentProfile.objects.get(id=self.id)
             if prev.profile_photo != self.profile_photo:
                 import os
                 if os.path.exists(prev.profile_photo.path):

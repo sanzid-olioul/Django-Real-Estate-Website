@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #Third party apps
-
+    'ckeditor',
+    'multiselectfield',
     #Own created apps
     'home.apps.HomeConfig',
     'about.apps.AboutConfig',

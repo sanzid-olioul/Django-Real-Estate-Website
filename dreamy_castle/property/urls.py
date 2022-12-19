@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import Property,PropertySingle
+from .views import Properties,PropertySingle
 urlpatterns = [
-    path('',Property.as_view(),name='property'),
+    path('',Properties.as_view(),name='property'),
     path('<int:id>',PropertySingle.as_view(),name='property-single'),
 ]

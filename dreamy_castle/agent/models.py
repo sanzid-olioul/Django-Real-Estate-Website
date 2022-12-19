@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+# from property.models import Property
 from PIL import Image
 import time
 # Create your models here.
@@ -45,4 +46,10 @@ class AgentProfile(models.Model):
             p_p.resize((800,896),Image.NEAREST)
             p_p.save(self.profile_photo.path)
     
-    
+class Messages(models.Model):
+    agent = models.ForeignKey(User,on_delete=models.CASCADE)
+    sender_name = models.CharField(max_length=35)
+    sender_email = models.EmailField()
+    message = models.CharField(max_length=1000)
+    property_id = models.ForeignKey('property.Property',on_delete=models.CASCADE)
+    is_checked = models.BooleanField(default=False)

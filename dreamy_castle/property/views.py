@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 class Properties(View):
     def get(self,request,*args, **kwargs):
         properties = Property.objects.all()
+        print(properties[0].__dict__)
         return render(request,'property.html',{'properties':properties})
 
 class PropertySingle(View):

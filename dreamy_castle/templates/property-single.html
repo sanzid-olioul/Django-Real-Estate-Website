@@ -28,9 +28,7 @@
               <li class="breadcrumb-item active" aria-current="page">
                 {{property.property_name}}
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                {{property.floor_plan}}
-            </li>
+              
             </ol>
           </nav>
         </div>
@@ -241,7 +239,7 @@
             </div>
             <div class="col-md-12 col-lg-4">
               <div class="property-contact">
-                <form class="form-a" method = 'POST' action={% url 'property-single' 1%}>
+                <form class="form-a" method = 'POST' action="{% url 'property-single' property.id %}">
                   {% csrf_token %}
                   <div class="row">
                     <div class="col-md-12 mb-1">

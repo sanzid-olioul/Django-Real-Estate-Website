@@ -7,8 +7,19 @@ from django.http import HttpResponseRedirect
 class Properties(View):
     def get(self,request,*args, **kwargs):
         properties = Property.objects.all()
-        print(properties[0].__dict__)
-        return render(request,'property.html',{'properties':properties})
+        property_datas = []
+        for property in properties:
+            img =  PropertyImages.objects.filter(property = property.id)
+            if img:
+                img = img[0].image
+            else:
+                img = 'img/property-3.jpg'
+            temp = {
+                'property':property,
+                'image': img
+            }
+            property_datas.append(temp)
+        return render(request,'property.html',{'properties':property_datas})
 
 class PropertySingle(View):
     def get(self,request,*args, **kwargs):

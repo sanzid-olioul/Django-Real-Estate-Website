@@ -195,21 +195,20 @@
             <div class="col-sm-12 col-md-4">
               <div class="widget-a">
                 <div class="w-header-a">
-                  <h3 class="w-title-a text-brand">EstateAgency</h3>
+                  <h3 class="w-title-a text-brand">{{name}}</h3>
                 </div>
                 <div class="w-body-a">
                   <p class="w-text-a color-text-a">
-                    Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-                    sed aute irure.
+                    {{about}}
                   </p>
                 </div>
                 <div class="w-footer-a">
                   <ul class="list-unstyled">
                     <li class="color-a">
-                      <span class="color-text-a">Phone .</span> contact@example.com
+                      <span class="color-text-a">Phone . </span> {{phone}}
                     </li>
                     <li class="color-a">
-                      <span class="color-text-a">Email .</span> +54 356 945234
+                      <span class="color-text-a">Email . </span> {{mail}}
                     </li>
                   </ul>
                 </div>
@@ -304,22 +303,22 @@
               <div class="socials-a">
                 <ul class="list-inline">
                   <li class="list-inline-item">
-                    <a href="{% url 'home' %}">
+                    <a href="{{facebook}}">
                       <i class="bi bi-facebook" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="{% url 'home' %}">
+                    <a href="{{twitter}}">
                       <i class="bi bi-twitter" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="{% url 'home' %}">
+                    <a href="{{instagram}}">
                       <i class="bi bi-instagram" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="{% url 'home' %}">
+                    <a href="{{linkedin}}">
                       <i class="bi bi-linkedin" aria-hidden="true"></i>
                     </a>
                   </li>

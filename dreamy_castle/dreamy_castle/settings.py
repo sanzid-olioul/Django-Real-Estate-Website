@@ -73,6 +73,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #Own Social Media context Preprocessor
+                'about.contex_preprocessor.add_footer_variable_to_context'
             ],
         },
     },
